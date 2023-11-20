@@ -284,7 +284,8 @@ bool Pacman::great(int i, int j){
 
     for (int t = 0; t < 4; ++t)
     {
-        if (game->ghost[t]->status == Ghost::Panic) continue;
+        if (game->ghost[t]->status == Ghost::Panic ||
+                game->ghost[t]->status == Ghost::Running) continue;
         int gj = game->ghost[t]->get_x();
         int gi = game->ghost[t]->get_y();
         if (abs(gj - j) < 3 && abs(gi - i) < 3)
